@@ -4,7 +4,8 @@ import { Nav, Navbar } from 'react-bootstrap';
 const  Header = () => {
    return(
     <Navbar bg="light" expand="lg">
-    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+    <div className="container">
+    <Navbar.Brand href="#home">Book Worm</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
@@ -18,6 +19,7 @@ const  Header = () => {
         <Button variant="outline-success">Search</Button>
       </Form> */}
     </Navbar.Collapse>
+    </div>
   </Navbar>)
 }
 
