@@ -1,0 +1,41 @@
+body{
+    // background: rgb(235, 53, 53);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.links {
+    background: #fff;
+    height: 30%;
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+    //   align-content: center;
+      li {
+        list-style: none;
+        flex: 1;
+        &:hover{
+            background-color: #ff8;
+            // padding: 0 1em;
+        }
+        a {
+            text-decoration: none;
+            
+        }
+      }
+    }
+}
+
+.one {
+    background: #ff8;
+    width: 80%;
+    margin: 0 auto;
+    height: 80vh;
+    input {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
