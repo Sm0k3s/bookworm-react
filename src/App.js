@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import store from './store';
 import routes from './routes';
 import Homepage from './components/Homepage';
 import Header from './components/Header';
@@ -23,18 +25,13 @@ const switchRoutes = (
 class App extends Component  {
     render (){
     return(
+  <Provider store={store}>
     <Router>
       <div>
         {switchRoutes}
       </div>
-
-    </Router> 
-//     <div>
-//     <Header />
-// <AddBook />
-// <Homepage />
-// </div>
-    
+    </Router>  
+  </Provider>  
 );}}
 
 export default App;
