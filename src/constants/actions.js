@@ -56,7 +56,15 @@ export const getCategories = () => dispatch => axios.get(`${API_HOST}/book-categ
     console.log(error);
   });
 
-export const getBooks = () => dispatch => axios.get(`${API_HOST}/books/`)
+export const addBook = data => dispatch => axios.post(`${API_HOST}/books/`, data)
+  .then((response) => {
+    dispatch(addBookAction(response.data));
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+  export const getBooks = () => dispatch => axios.get(`${API_HOST}/books/`)
   .then((response) => {
     dispatch(getBooksAction(response.data));
   })
