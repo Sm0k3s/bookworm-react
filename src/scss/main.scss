@@ -39,3 +39,12 @@ body{
         justify-content: space-evenly;
     }
 }
+
+.delete {
+    display: flex;
+    justify-content: flex-end;
+}
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,6 +1,7 @@
 import Homepage  from './components/Homepage';
 import AddBook from './components/AddBook';
 import Header from './components/Header';
+import AddCategory from './components/AddCategory';
 
 
 const routes = [
@@ -15,6 +16,10 @@ const routes = [
   {
     path: '/header',
     component: Header,
+  },
+  {
+    path: '/book-categories',
+    component: AddCategory,
   },
 ];
 

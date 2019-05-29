@@ -5,3 +5,4 @@ export const GET_BOOKS = 'GET_BOOKS';
 
 
 export const ADD_CATEGORY = 'ADD_CATEGORY';
+export const GET_CATEGORIES = 'GET_CATEGORIES';
