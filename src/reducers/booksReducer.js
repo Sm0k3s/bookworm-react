@@ -4,11 +4,13 @@ import {
     EDIT_BOOK,
     GET_BOOKS,
     ADD_CATEGORY,
+    GET_CATEGORIES,
   } from '../constants/types';
   
   const INITIAL_STATE = {
     books: [],
     errorMessage: {},
+    categories: [],
     successMessage: '',
     loading: false,
   };
@@ -20,7 +22,23 @@ import {
           ...state,
           books: [...state.books, action.payload],
         };
-    //   case ADD_CATEGORY:
+      case GET_CATEGORIES:
+        return {
+          ...state,
+          categories: action.payload,
+        };
+      case ADD_CATEGORY:
+        return {
+          ...state,
+          categories: [...state.categories, action.payload],
+        };  
+      case GET_BOOKS:
+        return {
+          ...state,
+          books: action.payload,
+
+        };
+    //   case GET_CATEGORIES:
     //     return {
 
     //     };
