@@ -71,3 +71,11 @@ export const addBook = data => dispatch => axios.post(`${API_HOST}/books/`, data
   .catch((error) => {
     console.log(error);
   });
+
+  export const deleteBook = data => dispatch => axios.delete(data)
+  .then((response) => {
+    dispatch(deleteBookAction(data));
+  })
+  .catch((error) => {
+    console.log(error);
+  });

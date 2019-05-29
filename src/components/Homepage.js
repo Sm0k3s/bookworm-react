@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from './Header';
 import AddCategory from './AddCategory';
-import { getCategories, getBooks } from '../constants/actions';
+import { getCategories,
+  getBooks, deleteBook } from '../constants/actions';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class Homepage extends Component {
@@ -19,8 +20,8 @@ class Homepage extends Component {
 
   handleDelete = (e) => {
     e.preventDefault();
-
-    console.log(e.target.value);
+    const value = e.target.value;
+    this.props.deleteBook(value);
   }
 
   render () {
@@ -38,7 +39,7 @@ class Homepage extends Component {
        <div className="row " style={{ display: 'flex'}}>
        
         { books.map(book => (
-            <Card style={{ width: '33.3%', justifyContent: 'space-around'}}>
+            <Card key={book.url} style={{ width: '33.3%', justifyContent: 'space-around'}}>
                 <Card.Img variant="top" src="https://spsy6.files.wordpress.com/2015/09/bookworm.jpg" />
                 <Card.Body>
                     <Card.Title>{book.title}</Card.Title>
@@ -51,10 +52,8 @@ class Homepage extends Component {
                     <ListGroupItem>Category: {book.category}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                    <button value={book.url} onClick={this.handleDelete}>Edit</button>
+                    <button>Edit</button>
                     <button value={book.url} onClick={this.handleDelete}>Delete</button>
-                    {/* <Card.Link href="#" value={book.url} onClick={this.handleDelete}>Edit</Card.Link>
-                    <Card.Link href="#" name="delete" value={book.url} onClick={this.handleDelete}>Delete</Card.Link> */}
                 </Card.Body>
             </Card>
             ))
@@ -72,5 +71,5 @@ export const mapStateToProps = ({ books }) => ({
   
 export default connect(
   mapStateToProps,
-  { getCategories, getBooks },
+  { getCategories, getBooks, deleteBook },
 )(Homepage);

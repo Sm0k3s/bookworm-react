@@ -38,10 +38,11 @@ import {
           books: action.payload,
 
         };
-    //   case GET_CATEGORIES:
-    //     return {
-
-    //     };
+        case DELETE_BOOK:
+        return {
+          ...state,
+          books: state.books.filter(book => book.url !== action.payload),
+        };
     default: 
       return state;
     }
